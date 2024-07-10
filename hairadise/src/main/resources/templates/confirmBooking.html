@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirm Booking</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+<header>
+  <h1><a href="/">Hairdise</a></h1>
+</header>
+
+<div class="container">
+  <h2>Confirm Your Booking</h2>
+  <div>
+    <p>Date: <span th:text="${confirmation.aDate}"></span></p>
+    <p>Service: <span th:text="${confirmation.service}"></span></p>
+    <p>Hairdresser: <span th:text="${confirmation.hairdresser}"></span></p>
+    <p>Duration: <span th:text="${confirmation.duration}"></span> minutes</p>
+    <p>Price: <span th:text="${confirmation.price}"></span></p>
+    <p>Deposit: <span th:text="${confirmation.deposit}"></span></p>
+  </div>
+  <form action="/finalizeBooking" method="post">
+    <button type="submit">Confirm Booking</button>
+  </form>
+</div>
+
+</body>
+</html>

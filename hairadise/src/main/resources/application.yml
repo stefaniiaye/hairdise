@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: hairadise
+  h2:
+    console:
+      path: /my-console
+  datasource:
+    url: jdbc:h2:file:./mydb/hairadise
+    username: s27591
+    password: test
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update

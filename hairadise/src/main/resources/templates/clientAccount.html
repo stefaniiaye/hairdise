@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Account Information</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+<header>
+  <h1><a href="/">Hairdise</a></h1>
+  <nav>
+    <a href="/hairdressers">Hairdressers</a>
+    <a href="/services">Services</a>
+    <a href="/top5">Top 5</a>
+  </nav>
+<h2>Account Information</h2>
+
+<div>
+  <p><strong>Name:</strong> <span th:text="${client.name}"></span></p>
+  <p><strong>Surname:</strong> <span th:text="${client.surname}"></span></p>
+  <p><strong>Email:</strong> <span th:text="${client.email}"></span></p>
+  <p><strong>Date of Birth:</strong> <span th:text="${client.dateOfBirth}"></span></p>
+  <p><strong>Total Points:</strong> <span th:text="${client.totalNumOfPoints}"></span></p>
+</div>
+
+<div>
+  <a th:href="@{/account/history(clientId=${client.clientId})}">
+    <button>See Your History</button>
+  </a>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Date, Time, and Hairdresser</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+<header>
+    <h1><a href="/">Hairdise</a></h1>
+</header>
+
+<div class="container">
+    <h2>Select Date and Time</h2>
+    <form action="/selectDateTimeAndHairdresser" method="post">
+        <input type="hidden" id="serviceId" name="serviceId" th:value="${serviceId}">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required>
+        <button type="submit">Check Availability</button>
+    </form>
+
+    <div th:if="${hairdressers}">
+        <h3>Available Hairdressers:</h3>
+        <form action="/confirmBooking" method="post">
+            <input type="hidden"  name="serviceId" th:value="${serviceId}">
+            <input type="hidden"  name="date" th:value="${dateTime}">
+            <input type="hidden"  name="time" th:value="${dateTime}">
+            <select id="hairdresserId" name="hairdresserId" required>
+                <option th:each="hairdresser : ${hairdressers}" th:value="${hairdresser.hairdresserId}" th:text="${hairdresser.name + ' ' + hairdresser.surname}"></option>
+            </select>
+            <button type="submit">Review Booking</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Services</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+<header>
+  <h1><a href="/">Hairdise</a></h1>
+  <nav>
+    <a href="/hairdressers">Hairdressers</a>
+    <a href="/services">Services</a>
+    <a href="/top5">Top 5</a>
+  </nav>
+  <div class="button-container">
+    <a href="/login" class="button">Log in</a>
+    <a href="/register" class="button">Register</a>
+  </div>
+</header>
+
+<div class="container">
+  <h2>Our Services</h2>
+  <form action="/book" method="post">
+    <ul class="my-list">
+      <li th:each="service : ${services}">
+        <div class="my-item">
+          <h3 th:text="${service.name}"></h3>
+          <p th:text="${service.description}"></p>
+          <p>Price: <span th:text="${service.price}"></span></p>
+          <p>Duration: <span th:text="${service.duration} + ' minutes'"></span></p>
+
+          <input type="radio" name="serviceId" th:value="${service.serviceId}" required>
+
+        </div>
+      </li>
+    </ul>
+    <button type="submit" class="button">Book Appointment</button>
+  </form>
+</div>
+
+</body>
+</html>

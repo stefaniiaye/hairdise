@@ -1,0 +1,109 @@
+body {
+    font-family: "Lucida Console", monospace;
+    margin: 0;
+    background-color: #f5e8e8;
+}
+
+header {
+    background-color: #f8c4c4;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 56px;
+    font-family: serif;
+    color: #333;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 26px;
+    margin: 0 10px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    background-color: #cc2e5a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #b31a45;
+}
+
+.container {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.image-container {
+    margin-top: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.description {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #666;
+}
+
+.my-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.my-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.my-item h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.my-item p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}

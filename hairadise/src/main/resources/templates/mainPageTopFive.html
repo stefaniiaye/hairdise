@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Top 5 Hairdressers and Services</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+<header>
+  <h1><a href="/">Hairdise</a></h1>
+  <nav>
+    <a href="/hairdressers">Hairdressers</a>
+    <a href="/services">Services</a>
+    <a href="/top5">Top 5</a>
+  </nav>
+  <div class="button-container">
+    <a href="/login" class="button">Log in</a>
+    <a href="/register" class="button">Register</a>
+  </div>
+</header>
+
+<div class="container">
+  <h2>Top 5 Hairdressers</h2>
+  <ul class="my-list">
+    <li th:each="hairdresser : ${topHairdressers}">
+      <div class="my-item">
+        <h3 th:text="${hairdresser.name + ' ' + hairdresser.surname}"></h3>
+        <p th:text="${hairdresser.description}"></p>
+        <p>Clients: <span th:text="${hairdresser.appointments.size()}"></span></p>
+      </div>
+    </li>
+  </ul>
+
+  <h2>Top 5 Services</h2>
+  <ul class="my-list">
+    <li th:each="service : ${topServices}">
+      <div class="my-item">
+        <h3 th:text="${service.name}"></h3>
+        <p th:text="${service.description}"></p>
+        <p>Clients: <span th:text="${service.appointments.size()}"></span></p>
+      </div>
+    </li>
+  </ul>
+</div>
+
+</body>
+</html>

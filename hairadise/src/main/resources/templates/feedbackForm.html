@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Feedback Form</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+<h2>Leave Feedback</h2>
+<form th:action="@{/account/history/feedback}" th:object="${feedbackDTO}" method="post">
+  <input type="hidden" name="appointmentId" th:value="${appointmentId}" />
+  <div>
+    <label for="rating">Rating:</label>
+    <input type="number" id="rating" th:field="*{rating}" min="1" max="5" required>
+  </div>
+  <div>
+    <label for="comment">Comment:</label>
+    <textarea id="comment" th:field="*{comment}"></textarea>
+  </div>
+  <div>
+    <button type="submit">Submit Feedback</button>
+  </div>
+</form>
+</body>
+</html>
